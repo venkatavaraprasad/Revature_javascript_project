@@ -47,24 +47,24 @@ body {
 }
 
 
-.intro {
+#intro {
   text-align: center;
   padding: 60px 20px;
   background: linear-gradient(135deg, #fff7c2, #ffeaa7);
 }
 
-.intro h2 {
+#intro h2 {
   font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
-.intro p {
+#intro p {
   font-size: 1.1rem;
   margin-bottom: 30px;
   color: #555;
 }
 
-.intro button {
+#intro button {
   margin: 8px;
 }
 
@@ -88,7 +88,7 @@ button:hover {
 }
 
 
-.form-section {
+#form-section {
   padding: 60px 20px;
   text-align: center;
 }
@@ -113,9 +113,9 @@ input {
   text-align: center;
 }
 
-#posts-container, #joke-container {
+/* #posts-container, #joke-container {
   margin-top: 20px;
-  max-width: 600px;
+  width: auto;
   margin-left: auto;
   margin-right: auto;
   background: #fff8dc;
@@ -123,7 +123,7 @@ input {
   padding: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.08);
   font-size: 1rem;
-}
+} */
 
 
 footer {
@@ -135,10 +135,120 @@ footer {
   font-size: 0.95rem;
   letter-spacing: 0.5px;
 }
+/* Parent container: turn on flexbox for side-by-side cards */
 
+
+
+
+
+
+
+/*applying styles
+/* Enhanced Movie Card Styling */
+.movie {
+  flex: 0 1 220px;           /* Slightly wider for better poster display */
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border: 1px solid #e1e5e9;
+  border-radius: 12px;
+  padding: 0;                /* Remove padding to let image fill */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;          /* Ensure clean edges */
+  position: relative;
+  cursor: pointer;
+}
+
+.movie:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #f7d417;
+}
+
+/* Movie poster image styling */
+.movie img {
+  width: 100%;
+  height: 300px;             /* Fixed height for consistency */
+  object-fit: cover;         /* Maintain aspect ratio */
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.movie:hover img {
+  transform: scale(1.05);
+}
+
+/* Movie title styling */
+.movie h3 {
+  padding: 15px 12px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.3;
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  min-height: 60px;          /* Ensure consistent title area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Enhanced container for better layout */
+#joke-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding:20px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius:5px;
+ 
+  
+}
+
+/* Loading state styling */
+.movie.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive design for mobile */
 @media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    gap: 12px;
+  .movie {
+    flex: 0 1 160px;         /* Smaller cards on mobile */
+  }
+  
+  .movie img {
+    height: 240px;           /* Shorter images on mobile */
+  }
+  
+  .movie h3 {
+    font-size: 0.9rem;
+    padding: 12px 8px;
+    min-height: 50px;
+  }
+  
+  #joke-container {
+    gap: 15px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie {
+    flex: 0 1 140px;         /* Even smaller on very small screens */
+  }
+  
+  .movie img {
+    height: 200px;
   }
 }

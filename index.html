@@ -13,32 +13,33 @@
       <h1 class="logo">Banana</h1>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="#">Movies</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Welcome to Banana</h2>
-      <p>We create world-class products that redefine technology.</p>
+    <section id="intro">
+      <h2>Welcome to Banana Movies</h2>
+      <p>We Recommend world-class movies that redefine  Creativity.</p>
       <button id="dateBtn">Display Date</button>
-      <button id="jokeBtn">Get a Joke</button>
+      <button id="jokeBtn">Get Movies</button>
     </section>
-    <section class="api-data">
-        
-        <h2>A Random Joke</h2>
-        <div id="joke-container"></div> 
-    </section>
-    <section class="form-section">
+    
+    
+    <section id="form-section">
       <h2>Get in Touch</h2>
-      <form action="#">
-        <label for="userName">Your Name:</label>
-        <input type="text" id="userName" name="userName" placeholder="Enter your name">
-        <button type="submit">Submit</button>
+      <form action="#" id="contactForm">
+        <label form="Email">Your Email:</label>
+        <input type="email" id="userName" name="userName" placeholder="Enter your mail">
+        <button type="submit" id="submit">Submit</button>
+        
       </form>
+      <div id="successMessage"></div>
+      
     </section>
+     
 
     
 
@@ -60,10 +61,12 @@
     
   </main>
 
+
   <footer>
     <p>&copy; 2025 Banana. All rights reserved.</p>
   </footer>
+  
 
-  <script src="revatu.js"></script>
+  <script src="revatu.js" type="module" ></script>
 </body>
 </html>
